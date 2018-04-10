@@ -1,9 +1,5 @@
- 
-ubuntu userName:root
-ubuntu posswd:root
+#ubuntu  
 
-mysql username：root
-mysql posswd：123 
 exit;  #ubuntu 退出mysql命令
   
 #chmod +x *.sh  
@@ -14,15 +10,15 @@ chmod +x *.sh 这个命令是为sh文件增加可执行权限； 　
 chmod +R 777 *.* 对当前目录下的所有子目录和子文件进行 777权限的变更；通在安装软件时复制相关文件。 
 
 
-运行 tomcat
+#运行 tomcat
 cd /opt
 sudo ./startup.sh
 sudo sh ./shutdown.sh
 
-运行 jar 
+#运行 jar 
 java -jar  路径/test.jar
 
-常用新建、删除、拷贝命令：
+#常用新建、删除、拷贝命令：
 mkdir 目录名        （新建一个文件夹，文件夹在Linux系统中叫做“目录”
 touch 文件名        （新建一个空文件）
 rmdir 目录名        （删除一个空文件夹，文件夹里有内容则不可用）
@@ -33,10 +29,10 @@ cp -i　　　　　　  （拷贝，同名文件存在时，输出 [yes/no] 询
 cp -f　　　　　　  （强制复制文件，如有同名不询问）
 stat  文件名(data_out0408.txt )  （查看文件信息）
 
-Ubuntu从终端命令打开文件编辑
+#Ubuntu从终端命令打开文件编辑
 gedit 文件名
 
-常用解压、安装程序、文件更新命令：deb格式双击即可安装
+#常用解压、安装程序、文件更新命令：deb格式双击即可安装
 tar -zxvf *.tar.gz　     ( 解压 tar.gz格式的文件 )
 sudo tar -zxvf *.tar.gz -C 指定目录名(-C 大写C)
 source *.install　（安装install格式的安装包）
@@ -48,7 +44,7 @@ sudo apt-get update  （更新源）
 
 
 
-rar常用命令主要有:
+#rar常用命令主要有:
 
 e 将文件解压到当前目录
   例:rar e test.rar
