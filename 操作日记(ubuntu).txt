@@ -10,10 +10,27 @@ chmod +x *.sh 这个命令是为sh文件增加可执行权限； 　
 chmod +R 777 *.* 对当前目录下的所有子目录和子文件进行 777权限的变更；通在安装软件时复制相关文件。 
 
 
+sudo gedit /etc/profile （打开环境变量）
+
+下载jdk压缩包设置系统默认jdk 版本
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.7.0_79/bin/java 300  
+sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.7.0_79/bin/javac 300  
+sudo update-alternatives --install /usr/bin/jar jar /usr/lib/jvm/jdk1.7.0_79/bin/jar 300   
+sudo update-alternatives --install /usr/bin/javah javah /usr/lib/jvm/jdk1.7.0_79/bin/javah 300   
+sudo update-alternatives --install /usr/bin/javap javap /usr/lib/jvm/jdk1.7.0_79/bin/javap 300   
+执行下面命令，配置需要默认的JDK
+sudo update-alternatives --config java   
+检查是否配置成功
+java -version
+
+
+
 #运行 tomcat
 cd /opt
 sudo ./startup.sh
 sudo sh ./shutdown.sh
+
+
 
 #运行 jar 
 java -jar  路径/test.jar
