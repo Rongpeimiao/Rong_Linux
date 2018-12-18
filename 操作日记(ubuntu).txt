@@ -79,6 +79,7 @@ Ubuntu更改用户名步骤：
 4、gedit /etc/group，你应该发现你的用户名在很多个组中，全部修改！
 5、修改完，保存，重启。
 
+命令行输入：sudo apt-get install vim　　然后安装，出现确认的时候，输入y确认就行
 Ubuntu更改 @后面的名称
 vim /etc/sysconfig/network
 
