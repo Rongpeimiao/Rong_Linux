@@ -1,5 +1,11 @@
 #ubuntu  
 
+ 
+ubuntu userName:root
+ubuntu posswd:root
+
+mysql username：root
+mysql posswd：123 
 exit;  #ubuntu 退出mysql命令
   
 #chmod +x *.sh  
@@ -8,64 +14,6 @@ The file is absent or does not have execute permission
 This file is needed to run this program
 chmod +x *.sh 这个命令是为sh文件增加可执行权限； 　
 chmod +R 777 *.* 对当前目录下的所有子目录和子文件进行 777权限的变更；通在安装软件时复制相关文件。 
-
-
-sudo gedit /etc/profile （打开环境变量）
-
-下载jdk压缩包设置系统默认jdk 版本
-sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.7.0_79/bin/java 300  
-sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.7.0_79/bin/javac 300  
-sudo update-alternatives --install /usr/bin/jar jar /usr/lib/jvm/jdk1.7.0_79/bin/jar 300   
-sudo update-alternatives --install /usr/bin/javah javah /usr/lib/jvm/jdk1.7.0_79/bin/javah 300   
-sudo update-alternatives --install /usr/bin/javap javap /usr/lib/jvm/jdk1.7.0_79/bin/javap 300   
-执行下面命令，配置需要默认的JDK
-sudo update-alternatives --config java   
-检查是否配置成功
-java -version
-
-
-
-#运行 tomcat
-cd /opt
-sudo ./startup.sh
-sudo sh ./shutdown.sh
-
-
-
-#运行 jar 
-java -jar  路径/test.jar
-
-#常用新建、删除、拷贝命令：
-mkdir 目录名        （新建一个文件夹，文件夹在Linux系统中叫做“目录”
-touch 文件名        （新建一个空文件）
-rmdir 目录名        （删除一个空文件夹，文件夹里有内容则不可用）
-rm -rf 非空目录名 （删除一个包含文件的文件夹）
-rm 文件名 文件名 （删除多个文件）
-cp 文件名 目标路径（拷贝一个文件到目标路径，如cp hserver /opt/hqueue）
-cp -i　　　　　　  （拷贝，同名文件存在时，输出 [yes/no] 询问是否执行）
-cp -f　　　　　　  （强制复制文件，如有同名不询问）
-stat  文件名(data_out0408.txt )  （查看文件信息）
-
-#Ubuntu从终端命令打开文件编辑
-gedit 文件名
-
-vim 文件名
-  "i"命令可以在当前光标之前插入文本。
-  "a"命令可以在当前光标之后插入文本。
-  "o"命令可以在当前行的下面另起一行，并使当前模式转为Insert模式。
-  "O"命令(注意是大写的字母O)将在当前行的上面另起一行。
-  
-  ：号，退出编辑命令
-:wq  保存退出vim
-
-
-#常用解压、安装程序、文件更新命令：deb格式双击即可安装
-tar -zxvf *.tar.gz　     ( 解压 tar.gz格式的文件 )
-sudo tar -zxvf *.tar.gz -C 指定目录名(-C 大写C)
-source *.install　（安装install格式的安装包）
-sh 路径/×.sh　（安装sh格式的文件，如 sudo sh /home/hp/Downloads/*.sh）
-sudo apt-get upgrade（更新已安装的包）
-sudo apt-get update  （更新源）
 
 
 tar -zxvf jdk7u79linuxx64.tar.gz  -C /usr/lib/jvm/
@@ -85,7 +33,76 @@ sudo update-alternatives --config java
 java -version
 
 
-#rar常用命令主要有:
+
+运行 tomcat
+cd /opt
+sudo ./startup.sh
+sudo sh ./shutdown.sh
+
+运行 jar 
+java -jar  路径/test.jar
+
+
+常用新建、删除、拷贝命令：
+mkdir 目录名        （新建一个文件夹，文件夹在Linux系统中叫做“目录”
+touch 文件名        （新建一个空文件）
+rmdir 目录名        （删除一个空文件夹，文件夹里有内容则不可用）
+rm -rf 非空目录名 （删除一个包含文件的文件夹）
+rm 文件名 文件名 （删除多个文件）
+cp 文件名 目标路径（拷贝一个文件到目标路径，如cp hserver /opt/hqueue）
+cp -i　　　　　　  （拷贝，同名文件存在时，输出 [yes/no] 询问是否执行）
+cp -f　　　　　　  （强制复制文件，如有同名不询问）
+stat  文件名(data_out0408.txt )  （查看文件信息）
+scp -r redis-3.0.0/  192.168.1.222:/usr/local/  (能ping通，远程复制)
+
+常用解压、安装程序、文件更新命令：deb格式双击即可安装
+tar -zxvf *.tar.gz　     ( 解压 tar.gz格式的文件 )
+sudo tar -zxvf *.tar.gz -C 指定目录名(-C 大写C)
+source *.install　（安装install格式的安装包）
+sh 路径/×.sh　（安装sh格式的文件，如 sudo sh /home/hp/Downloads/*.sh）
+sudo apt-get upgrade（更新已安装的包）
+sudo apt-get update  （更新源）
+
+安装rz之后可以用xshell上传文件
+
+--------------------- 
+Ubuntu更改密码步骤：
+1、进入Ubuntu，打开一个终端，输入 sudo su转为root用户。 注意，必须先转为root用户！！！
+2、sudo passwd user(user 是对应的用户名)
+3、输入新密码，确认密码。
+4、修改密码成功，重启，输入新密码进入Ubuntu。
+
+Ubuntu更改用户名步骤：
+1、进入Ubuntu，打开一个终端，输入 sudo su转为root用户。 注意，必须先转为root用户！！！
+2、gedit /etc/passwd ,找到代表你的那一行，修改用户名为新的用户名。 注意：只修改用户名！后面的全名、目录等不要动！
+3、gedit /etc/shadow，找到代表你的那一行，修改用户名为新用户名
+4、gedit /etc/group，你应该发现你的用户名在很多个组中，全部修改！
+5、修改完，保存，重启。
+
+Ubuntu更改 @后面的名称
+vim /etc/sysconfig/network
+
+再   hostname 名称
+--------------------- 
+
+ 
+Ubuntu从终端命令打开文件编辑
+gedit 文件名
+
+vim 文件名
+  "i"命令可以在当前光标之前插入文本。
+  "a"命令可以在当前光标之后插入文本。
+  "o"命令可以在当前行的下面另起一行，并使当前模式转为Insert模式。
+  "O"命令(注意是大写的字母O)将在当前行的上面另起一行。
+  
+  ：号，退出编辑命令
+:wq 
+
+
+#sheng@CQ_Ubuntu16:~/Desktop/embryo/imgrec-master$ sudo python3 app.py
+
+
+rar常用命令主要有:
 
 e 将文件解压到当前目录
   例:rar e test.rar
