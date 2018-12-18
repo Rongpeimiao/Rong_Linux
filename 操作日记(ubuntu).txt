@@ -81,9 +81,9 @@ Ubuntu更改用户名步骤：
 
 命令行输入：sudo apt-get install vim　　然后安装，出现确认的时候，输入y确认就行
 Ubuntu更改 @后面的名称
-vim /etc/sysconfig/network
+root@ubuntu:/home/note1# vim /etc/hostname
+root@ubuntu:/home/note1# vim /etc/hosts
 
-再   hostname 名称
 --------------------- 
 
  
